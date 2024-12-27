@@ -1,0 +1,59 @@
+<html xmlns:th="http:/www.thymeleaf.org" th:replace="customerpanel/customerbase::layout(~{::section})">
+<head>
+
+</head>
+<body>
+<section>
+<div class="main-panel w-100 row ms-auto"  style="margin-right: -85% !important;">
+        <div class="content-wrapper pb-0">
+      
+      <h1 class="text-center">Give Response </h1>
+      <div class="row px-3">
+     <form method="post">
+     <table class="table table-bordered " Style="margin:30px auto;">
+     <tr>
+     <th> Select  Response Type</th>
+     <td><select name="responsetype">
+     <option value="feedback">
+     Feedback
+     </option>
+     <option value="complaint">
+     Complaints
+     </option>
+     </select></td>
+     
+     </tr>
+       <tr>
+     <th>Enter Response Subject</th>
+     <td> <input type="text"  style="border:0px;" placeholder="Enter responce subject" required/></td>
+     
+     </tr>
+       <tr>
+     <th>Enter Response Message</th>
+     <td> <input type="text"  style="border:0px;" placeholder="Enter response message" required/></td>
+     
+     </tr>
+      
+     
+      
+       <tr>
+    
+     <td class="text-center" colspan="2">
+      <button type="submit" style="border:0px; " class="btn btn-primary"> Submit</button>
+    
+   
+      </td>
+        </tr>
+     </table>
+     </form>
+     </div>
+        </div>
+        <!-- content-wrapper ends -->
+        
+        <!-- partial -->
+      </div>
+     
+
+</section>
+</body>
+</html>

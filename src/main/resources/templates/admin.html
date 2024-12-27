@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+  </head>
+  <body>
+  <section>  
+                   <div class="row">
+                <div class="col-sm-12">
+<h1 class="text-center text-success mt-5">Admin Login</h1>
+                    <div class="row mt-5">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-5 mt-5">
+                            <div th:if="${message}">
+                                <p th:text="${message}" class="alert alert-success alert-dismissible"></p>
+                                </div>
+                            <form  method="post">
+                                
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label"> <b> Email address</b></label>
+                                  <input type="email" name="userid" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  <div id="emailHelp" class="form-text"></div>
+                                </div> <br>
+                                <div class="mb-3">
+                                  <label for="exampleInputPassword1" class="form-label"><b> Password</b></label>
+                                  <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                                  <button type="submit" class="btn btn-primary "> <b> Login </b></button>
+                                  <br><br><br>
+                                 </form>
+                        </div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4 mt-auto mb-auto ">
+                            <img src="img/download (1).jpg" class="w-100 " alt="">
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                </div>
+            </div>
+       
+  </section>
+ 
+  
+  </body>
+</html>

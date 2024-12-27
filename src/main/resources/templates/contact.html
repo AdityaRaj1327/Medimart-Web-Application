@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+  </head>
+  <body>
+      <section>
+        <div class="row">
+         
+            <div class="col-sm-6">
+                <div class="row  mt-3">
+                    <h2 class="text-center text-primary mt-5">CONTACT US</h2>
+                    <div class="col-sm-12   " >
+                    <div class="row">
+                       <div class="col-sm-2"></div>
+                        <div class="col-sm-10    mt-2  ">
+                            <div th:if="${message}">
+                                <p th:text="${message}" class="alert alert-success alert-dismissible"></p>
+                                </div>
+                                   
+                                   
+                                 <form th:object="${enquiryDao}" method="post">
+                                     <div class="form-group">
+                                        <label for="exampleInputEmail1" class="form-label"><b>Name</b> </label>
+                                        <input type="text" th:field="${enquiryDao.name}"  class="form-control" id="#" aria-describedby="emailHelp">
+                                        <p class="text-danger" th:if="${#fields.hasErrors('name')}" th:Errors="${enquiryDao.name}"></p>
+                                     </div>
+                                     <br>
+                                     <div class="form-group">
+                                        <label for="exampleInputEmail1" class="form-label"><b>Contact Number</b></label>
+                                        <input type="number" th:field="${enquiryDao.contactno}"  class="form-control" id="#" aria-describedby="emailHelp">
+                                            <p class="text-danger" th:if="${#fields.hasErrors('contactno')}" th:Errors="${enquiryDao.contactno}"></p>
+                                 
+                                     </div>
+                                       <br>
+                                     <div class="form-group">
+                                        <label for="exampleInputEmail1" class="form-label"><b>Email address</b></label>
+                                        <input type="email" th:field="${enquiryDao.email}"  class="form-control" id="#" aria-describedby="emailHelp">
+                                             <p class="text-danger" th:if="${#fields.hasErrors('email')}" th:Errors="${enquiryDao.email}"></p>
+                                 
+                                     </div>
+                                       <br>
+                                     <div class="form-group">
+                                        <label for="exampleInputEmail1" class="form-label"><b>Subject</b></label>
+                                        <input type="text" th:field="${enquiryDao.subject}"  class="form-control" id="#" aria-describedby="emailHelp">
+                                              <p class="text-danger" th:if="${#fields.hasErrors('subject')}" th:Errors="${enquiryDao.subject}"></p>
+                                 
+                                     </div>
+                                       <br>
+                                     <div class="form-group">
+                                        <label for="exampleInputEmail1" class="form-label"><b>Message</b></label>
+                                        <textarea class="form-control" th:field="${enquiryDao.message}"  aria-label="With textarea"></textarea>
+                  <p class="text-danger" th:if="${#fields.hasErrors('message')}" th:Errors="${enquiryDao.message}"></p>
+                                 
+                                     </div>
+                                       <br>
+                                 
+                                       
+                                     <div class="form-group ">
+                                        <button type="submit" class="btn btn-success ">Submit</button>
+                                         <br><br>
+                                     </div>
+                                 </form>
+                        </div>
+                    
+                    </div>
+                  
+                     </div>
+                   </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5 mt-5">
+                <div class="row mt-5">
+                  <h2 class="mt-5 text-info">Here is the Contact form  <br> Where you can send a qurries related to your problem.</h2>
+                    <div class="col-sm-12 mt-5">
+                        <img src="img/images.jpg"  class="w-100  " height="400px"  alt="">
+                    </div>
+                </div>
+             
+            </div>
+         
+        </div>
+      
+
+    </section> 
+  </body>
+</html>

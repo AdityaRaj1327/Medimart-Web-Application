@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+  </head>
+  <body>
+            <section>
+
+          <div class="row">
+            <div class="col-sm-8">
+              <div th:if="${message}">
+                <p th:text="${message}" class="alert alert-success alert-dismissible"></p>
+                </div>
+              <div class="row">
+                <div class="col-sm-12 d-flex">
+               
+                  <div class="col-sm-5  mt-5">
+                
+
+                    <form th:object="${registrationDao}" method="post" enctype="multipart/form-data">
+                      <div class="form-group">
+                         <label for="exampleInputEmail1" class="form-label"><b>Name</b> </label>
+                         <input type="text" th:field="${registrationDao.name}"  class="form-control" >
+                         <p class="text-danger" th:if="${#fields.hasErrors('name')}" th:Errors="${registrationDao.name}"></p>
+                      </div>
+                      <br>
+                      <label for="exampleInputEmail1" class="form-label"><b>Gender</b></label>
+                      <br>
+                      <div class="form-check form-check-inline">
+                         <input class="form-check-input" type="radio" th:field="${registrationDao.gender}" name="inlineRadioOptions" id="inlineRadio1" value="male">
+                         <label class="form-check-label" for="inlineRadio1">Male</label>
+                               <p class="text-danger" th:if="${#fields.hasErrors('gender')}" th:Errors="${registrationDao.gender}"></p>
+                 
+                       </div>
+                       <div class="form-check form-check-inline">
+                         <input class="form-check-input" type="radio"  th:field="${registrationDao.gender}"  name="inlineRadioOptions" id="inlineRadio2" value="female">
+                         <label class="form-check-label" for="inlineRadio2">Female</label>
+                             <p class="text-danger" th:if="${#fields.hasErrors('gender')}" th:Errors="${registrationDao.gender}"></p>
+                        </div>
+                       <div class="form-check form-check-inline">
+                         <input class="form-check-input" th:field="${registrationDao.gender}"  type="radio" name="inlineRadioOptions" id="inlineRadio3" value="other" >
+                         <label class="form-check-label" for="inlineRadio3">Other </label>
+                            <p class="text-danger" th:if="${#fields.hasErrors('gender')}" th:Errors="${registrationDao.gender}"></p>
+                 
+                       </div>
+                     
+                        <br> <br>
+                      <div class="form-group">
+                         <label for="exampleInputEmail1" class="form-label"><b>Email address</b></label>
+                         <input type="email" th:field="${registrationDao.email}"  class="form-control" >
+                              <p class="text-danger" th:if="${#fields.hasErrors('email')}" th:Errors="${registrationDao.email}"></p>
+                  
+                      </div>
+                      <br>
+                      <div class="form-group">
+                         <label for="exampleInputEmail1" class="form-label"><b>Password</b></label>
+                         <input type="password" th:field="${registrationDao.password}"  class="form-control" >
+                              <p class="text-danger" th:if="${#fields.hasErrors('password')}" th:Errors="${registrationDao.password}"></p>
+                  
+                      </div>
+                    
+                  </div>
+                  <div class="col-sm-1"></div>
+                <div class="col-sm-5  mt-5">
+
+                  <form th:object="${registrationDao}" method="post" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="form-label"><b>Contact Number</b></label>
+                        <input type="number" th:field="${registrationDao.contactno}"  class="form-control" >
+                            <p class="text-danger" th:if="${#fields.hasErrors('contactno')}" th:Errors="${registrationDao.contactno}"></p>
+                    </div>
+                  
+                   <br>
+                
+                 <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label"><b>DOB</b></label>
+                    <input type="date" th:field="${registrationDao.dob}"  class="form-control" >
+                          <p class="text-danger" th:if="${#fields.hasErrors('dob')}" th:Errors="${registrationDao.dob}"></p>
+             
+                 </div>
+                   <br>
+                 <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label"><b>Address</b></label>
+                    <textarea class="form-control" th:field="${registrationDao.address}" ></textarea>
+                   <p class="text-danger" th:if="${#fields.hasErrors('address')}" th:Errors="${registrationDao.address}"></p>
+             
+                 </div>
+                   
+                   <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label"><b>Profile Picture</b></label>
+                    <input type="file" th:field="${registrationDao.file}"  class="form-control" >
+                          <p class="text-danger" th:if="${#fields.hasErrors('file')}" th:Errors="${registrationDao.file}"></p>
+             
+               
+               <br>
+                    <div class="form-group ">
+                      <button type="submit" class="btn btn-primary ">Register</button>     <br><br>
+                   </div>
+                    
+                 </div>
+                </form>
+                </div>
+              </div>
+              <br>
+                <div class="row">
+                     <div class="col-sm-2 mt-5 mx-auto">
+              
+                  </div>
+              
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4    mt-auto mb-auto">
+              <img src="/img/download.jpg" class="w-100 " alt="">
+            </div>
+          </div>
+       
+           
+           
+           </section>
+  </body>
+</html>
